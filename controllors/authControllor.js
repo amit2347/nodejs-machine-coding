@@ -5,7 +5,7 @@ const { AppDataSource } = require('../dataSource');
 const User = require('../entity/User'); 
 
 
-exports.signUp = async (req, res, next) => {
+const signUp = async (req, res, next) => {
     try {
       const userRepository = AppDataSource.getRepository(User);
       const { emailId, firstName, lastName, password } = req.body;
@@ -44,7 +44,7 @@ exports.signUp = async (req, res, next) => {
     }
   }
 
-exports.login = async (req, res, next) => {
+ const login = async (req, res, next) => {
     try {
       const userRepository = AppDataSource.getRepository(User);
       const { emailId, password } = req.body;
@@ -96,4 +96,9 @@ exports.login = async (req, res, next) => {
       });
       return;
     }
+  }
+
+  module.exports = {
+    signUp,
+    login
   }

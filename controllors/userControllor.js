@@ -1,7 +1,7 @@
 const { AppDataSource } = require('../dataSource'); 
 const User = require('../entity/User');
 const ActivityDaySchedule = require('../entity/Activity_Day_Schedule');
-exports.getScheduleDetails =  async (req, res, next) => {
+const getScheduleDetails =  async (req, res, next) => {
     try {
       const dayNo = req.query.dayNo;
       const userId = req.userContext.userId;
@@ -33,7 +33,7 @@ exports.getScheduleDetails =  async (req, res, next) => {
   
       const resultFromDB = await activityDayScheduleRepository
         .createQueryBuilder('ads')
-        .select('a.name as name, uat.status, a.*, freq_unit.displayText, tu.name as timeUnits')
+        .select('uat.id as id ,a.name as name, uat.status, a.*, freq_unit.displayText, tu.name as timeUnits')
         .leftJoin('activity', 'a', 'a.id = ads.activity')
         .leftJoin('user_activity_tracker', 'uat', 'uat.activity_day_schedule_id = ads.id')
         .leftJoin('time_units', 'tu', 'tu.id = a.duration_unit_id')
@@ -41,7 +41,7 @@ exports.getScheduleDetails =  async (req, res, next) => {
         .where('ads.day = :number', { number: dayNo })
         .andWhere('uat.userId = :userId', { userId: userId })
         .execute();
-      
+      console.log(resultFromDB )
       if (resultFromDB.length > 0) {
         const responseforClient = resultFromDB.map((item) => {
           const frequency = item.frequency_count + 'x' + item.displayText;
@@ -50,6 +50,7 @@ exports.getScheduleDetails =  async (req, res, next) => {
             duration = 'Maximise'
           }
           return {
+            id : item.id,
             name: item.name,
             status: item.status,
             frequency: frequency,
@@ -69,4 +70,8 @@ exports.getScheduleDetails =  async (req, res, next) => {
       console.error(error);
       res.send({ error: 'Something went wrong' });
     }
+  }
+
+  module.exports = {
+    getScheduleDetails
   }
