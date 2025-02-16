@@ -33,6 +33,7 @@ curl --location 'localhost:3000/api/user/schedule?dayNo=16' \
 Tech Stack Used : NodeJs , ExpressJs , SQLite3
 Simple ER Digram to illustrate my table structure : 
 
+![ER Digram](./ER-Diagram/mermaid-ER-Digram.svg)
 Some features : 
 * Added middleware to protect our main route. It is not accessible unless the user is authenticated.
 * Added two routes -> ```auth/signUp``` and ```auth/login``` for authentication purposes.
