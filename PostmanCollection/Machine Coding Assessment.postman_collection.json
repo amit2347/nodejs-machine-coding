@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "e39d6c08-8cc1-43d4-bc29-cb98d9893698",
+		"name": "Machine Coding Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27086568"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"emailId\" : \"amitsampat.patil@gmail.com\",\r\n    \"password\" : \"Admin@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Case",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"emailId\" : \"amitsampat.patil@gmail.com\",\r\n    \"password\" : \"Admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "178"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b2-rtWQ2UiXanRtXSGYoQqwenPvMXQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Feb 2025 12:55:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Valid User\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzk3MTQxNDIsInVzZXJJZCI6MSwiaWF0IjoxNzM5NzEwNTQyfQ.9pIPMGbsMf6ohrVI57xTq58HwocrQBkrsA6casPoRCc\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Schedule Of User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzk3MTQxNDIsInVzZXJJZCI6MSwiaWF0IjoxNzM5NzEwNTQyfQ.9pIPMGbsMf6ohrVI57xTq58HwocrQBkrsA6casPoRCc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/user/schedule?dayNo=14",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"schedule"
+					],
+					"query": [
+						{
+							"key": "dayNo",
+							"value": "14"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Case",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/user/schedule?dayNo=14",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"schedule"
+							],
+							"query": [
+								{
+									"key": "dayNo",
+									"value": "14"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "686"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2ae-y4VEqwT51U1pgUuGqDxSlEZMbks\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Feb 2025 12:57:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Results fetched successfully\",\n    \"result\": [\n        {\n            \"name\": \"Advanced Mobility exercices\",\n            \"status\": 0,\n            \"frequency\": \"3x/Day\",\n            \"duration\": \"Maximise\"\n        },\n        {\n            \"name\": \"Knowledge Boosters(Follow Daily Plans)\",\n            \"status\": 0,\n            \"frequency\": \"2x/Day\",\n            \"duration\": \"30 seconds\"\n        },\n        {\n            \"name\": \"Visual Solfege\",\n            \"status\": 0,\n            \"frequency\": \"1x/Day\",\n            \"duration\": \"30 seconds\"\n        },\n        {\n            \"name\": \"Auditory Memory (Song 2)\",\n            \"status\": 0,\n            \"frequency\": \"1x/Day\",\n            \"duration\": \"30 seconds\"\n        },\n        {\n            \"name\": \"Auditory Magic(Set 2)\",\n            \"status\": 0,\n            \"frequency\": \"2xsounds/day\",\n            \"duration\": \"60 seconds\"\n        },\n        {\n            \"name\": \"Talk, To Listen\",\n            \"status\": 0,\n            \"frequency\": \"1x/Day\",\n            \"duration\": \"60 seconds\"\n        },\n        {\n            \"name\": \"Finger Skills\",\n            \"status\": 0,\n            \"frequency\": \"3x/Week\",\n            \"duration\": \"60 seconds\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "SignUp",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"User\",\r\n    \"lastName\" : \"Mumbai\",\r\n    \"emailId\" : \"user.mumbai@gmail.com\",\r\n    \"password\" : \"Admin@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/auth/signUp",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"signUp"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Case",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"User\",\r\n    \"lastName\" : \"Mumbai\",\r\n    \"emailId\" : \"user.mumbai@gmail.com\",\r\n    \"password\" : \"Admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/signUp",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signUp"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "41"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"29-+G+6/8zF9mWzH0RafqtojP3iKA4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 16 Feb 2025 12:58:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User onboarded successfully\"\n}"
+				}
+			]
+		}
+	]
+}
