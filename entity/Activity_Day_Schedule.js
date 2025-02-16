@@ -1,5 +1,4 @@
 const { EntitySchema } = require('typeorm');
-const Activity = require('./Activities');
 
 module.exports = new EntitySchema({
   name: 'ActivityDaySchedule',

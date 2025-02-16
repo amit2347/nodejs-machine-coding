@@ -1,7 +1,4 @@
 const { EntitySchema } = require('typeorm');
-const Category = require('./Category');
-const FrequencyUnits = require('./Frequency_Units'); // Ensure Frequency_Units is defined and exported properly
-const TimeUnits = require('./Time_Units'); // Ensure Time_Units is defined and exported properly
 
 module.exports = new EntitySchema({
   name: 'Activity',

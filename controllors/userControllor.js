@@ -1,7 +1,7 @@
 const { AppDataSource } = require('../dataSource'); 
 const User = require('../entity/User');
 const ActivityDaySchedule = require('../entity/Activity_Day_Schedule');
-const getScheduleDetails =  async (req, res, next) => {
+const getScheduleDetails =  async (req, res) => {
     try {
       const dayNo = req.query.dayNo;
       const userId = req.userContext.userId;

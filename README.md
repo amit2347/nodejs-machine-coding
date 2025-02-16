@@ -43,6 +43,7 @@ Some features :
 * Added two routes -> ```auth/signUp``` and ```auth/login``` for authentication purposes.
 * Added a route -> ```activity/status/:id``` as POST to update the status of the activity.This API would serve whenever the user clicks on the tick mark.
 * The color coding of the buttons can be determined by the Client based on the frequency.
+* Whenever the user presses on the next and previous buttons, the client can call the API by changing the ```dayNo``` query param.
 * The "Maximise" as seen on screen 1 is stored as 9999 Hours/Day in the DB. I have made changes to the response to tackle this case. This case can be tackled by the client too but made it from our side to be readily served by client.
 * I had a little conflict when trying to figure out how should we store the frequency of the activity(eg 2 times/per day , 3 times/week).There was one way where I could figure it out from the ```Activity_Day_Schedule``` Table but that was creating conflicts with cases such as maximise and 2sounds/day.I finally decided it to normalise and store it myself. Getting some further clarity  in the future will definitly help finalise which approach to use.
 * Used SQLite3 so that the Database could be embedded inside the application itself .This was done purely for portability reasons. In production environments we would use a hosted DB.
