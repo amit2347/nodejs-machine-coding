@@ -31,6 +31,7 @@ curl --location 'localhost:3000/api/user/schedule?dayNo=16' \
 ```
 ## Description 
 Tech Stack Used : NodeJs , ExpressJs , SQLite3
+
 Simple ER Digram to illustrate my table structure : 
 
 ![ER Digram](./ER-Diagram/mermaid-ER-Digram.svg)
