@@ -25,4 +25,10 @@ module.exports = new EntitySchema({
       type: 'varchar',
     },
   },
+  indices: [
+    {
+      name: 'IDX_ID_EMAILID',
+      columns: [ 'id','email'], 
+    }
+  ],
 });

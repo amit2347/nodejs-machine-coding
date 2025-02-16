@@ -110,7 +110,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzk3MTQxNDIsInVzZXJJZCI6MSwiaWF0IjoxNzM5NzEwNTQyfQ.9pIPMGbsMf6ohrVI57xTq58HwocrQBkrsA6casPoRCc",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzk3Mjk4MTcsInVzZXJJZCI6MSwiaWF0IjoxNzM5NzI2MjE3fQ.IoRY4Nph9XFIFzc_fqzZH-rLyJykj0Hf-q13rUwG3wg",
 							"type": "string"
 						}
 					]
@@ -311,7 +311,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "localhost:3000/api/activity/schedule/:id",
+					"raw": "localhost:3000/api/activity/status/:id",
 					"host": [
 						"localhost"
 					],
@@ -319,7 +319,7 @@
 					"path": [
 						"api",
 						"activity",
-						"schedule",
+						"status",
 						":id"
 					],
 					"variable": [

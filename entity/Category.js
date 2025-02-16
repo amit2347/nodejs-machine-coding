@@ -13,4 +13,10 @@ module.exports = new EntitySchema({
       type: 'varchar',
     },
   },
+  indices: [
+    {
+      name: 'IDX_ID_CATEGORY_NAME',
+      columns: [ 'id','name'], 
+    }
+  ],
 });

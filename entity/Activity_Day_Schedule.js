@@ -30,4 +30,10 @@ module.exports = new EntitySchema({
       },
     },
   },
+  indices: [
+    {
+      name: 'IDX_ID_DAY',
+      columns: [ 'id','day'], 
+    }
+  ],
 });

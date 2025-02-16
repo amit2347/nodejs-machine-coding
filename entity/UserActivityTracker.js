@@ -37,4 +37,10 @@ module.exports = new EntitySchema({
       },
     },
   },
+  indices: [
+    {
+      name: 'IDX_STATUS_TRACKER',
+      columns: [ 'activityDaySchedule','userId' , 'status'], 
+    }
+  ],
 });

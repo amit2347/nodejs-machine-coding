@@ -45,4 +45,10 @@ module.exports = new EntitySchema({
       },
     },
   },
+  indices: [
+    {
+      name: 'IDX_ID_ACTIVITY_NAME',
+      columns: [ 'id','name'], 
+    }
+  ],
 });

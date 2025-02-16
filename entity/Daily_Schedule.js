@@ -12,14 +12,6 @@ module.exports = new EntitySchema({
     day_number: {
       type: 'int',
     },
-    completed: {
-      type: 'boolean',
-      default: false,
-    },
-    completed_at: {
-      type: 'datetime',
-      nullable: true,
-    },
   },
   uniques: [
     {
@@ -35,4 +27,10 @@ module.exports = new EntitySchema({
       },
     },
   },
+  indices: [
+    {
+      name: 'IDX_ID_DAY_NUMBER',
+      columns: [ 'id','day_number'], 
+    }
+  ],
 });
