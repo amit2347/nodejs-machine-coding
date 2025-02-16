@@ -20,18 +20,18 @@ To view the main API :
     "password" : "Admin@123"
    }
    ```
-OR Sample cURL
+   OR Sample cURL
    ```
    curl --location 'localhost:3000/api/user/schedule?dayNo=16' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzk3MDkwMTMsInVzZXJJZCI6MSwiaWF0IjoxNzM5NzA1NDEzfQ.Q8rvxuVKp-GXeYD98EDfp-3iMz57HXaO7eLFm43snu0'
+   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzk3MDkwMTMsInVzZXJJZCI6MSwiaWF0IjoxNzM5NzA1NDEzfQ.Q8rvxuVKp-GXeYD98EDfp-3iMz57HXaO7eLFm43snu0'
    ```
-3. Copy the token to the clipboard.
-4. Paste it inside the Authorisation -> Bearer Token Section of the ```/api/user/schedule``` Endpoint . Add ```dayNo``` as per your wish in params of the API.
-Sample cURL
-```
-curl --location 'localhost:3000/api/user/schedule?dayNo=16' \
---header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzk3MDkwMTMsInVzZXJJZCI6MSwiaWF0IjoxNzM5NzA1NDEzfQ.Q8rvxuVKp-GXeYD98EDfp-3iMz57HXaO7eLFm43snu0'
-```
+2. Copy the token to the clipboard.
+3. Paste it inside the Authorisation -> Bearer Token Section of the ```/api/user/schedule``` Endpoint . Add ```dayNo``` as per your    wish in params of the API.
+   Sample cURL
+   ```
+   curl --location 'localhost:3000/api/user/schedule?dayNo=16' \
+   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3Mzk3MDkwMTMsInVzZXJJZCI6MSwiaWF0IjoxNzM5NzA1NDEzfQ.Q8rvxuVKp-GXeYD98EDfp-3iMz57HXaO7eLFm43snu0'
+   ```
 ## Description 
 Tech Stack Used : NodeJs , ExpressJs , SQLite3
 
