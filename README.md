@@ -42,6 +42,7 @@ Some features :
 * Added middleware to protect our main route. It is not accessible unless the user is authenticated.
 * Added two routes -> ```auth/signUp``` and ```auth/login``` for authentication purposes.
 * Added a route -> ```activity/status/:id``` as POST to update the status of the activity.This API would serve whenever the user clicks on the tick mark.
+* Added code to automatically enroll a user to the tracker as soon as he signs up in the app.
 * The color coding of the buttons can be determined by the Client based on the frequency.
 * Whenever the user presses on the next and previous buttons, the client can call the API by changing the ```dayNo``` query param.
 * The "Maximise" as seen on screen 1 is stored as 9999 Hours/Day in the DB. I have made changes to the response to tackle this case. This case can be tackled by the client too but made it from our side to be readily served by client.
