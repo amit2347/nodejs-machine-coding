@@ -1,5 +1,8 @@
 ## Introduction
 Thank you for this opportunity.
+
+Please refer to the Postman Collection attached inside this repo for the API Endpoints. Its payload and responses.
+
 Please follow the below steps to clone this repo and get it running :
 1. Install necessary dependancies.
    * [Node Js](https://nodejs.org/en/download)
