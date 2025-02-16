@@ -10,11 +10,11 @@ const updateStatusOfActivity = async(req,res) => {
                 message : "Please send required parameters"
             })
         }
-        const rowExistence =  UserActivityTrackerRepository.findOne({
+        const rowExistence =  await UserActivityTrackerRepository.findOne({
             where:{
                 id ,
                 userId : req.userContext.userId,
-                status:0
+                status: false
             }
         });
         if(!rowExistence){
@@ -23,7 +23,7 @@ const updateStatusOfActivity = async(req,res) => {
             })
         }
         await UserActivityTrackerRepository.createQueryBuilder().update(UserActivityTracker).set({
-            status : 1
+            status : true
         }).where({
              id ,
             userId : req.userContext.userId

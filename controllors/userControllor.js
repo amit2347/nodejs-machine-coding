@@ -41,7 +41,6 @@ const getScheduleDetails =  async (req, res, next) => {
         .where('ads.day = :number', { number: dayNo })
         .andWhere('uat.userId = :userId', { userId: userId })
         .execute();
-      console.log(resultFromDB )
       if (resultFromDB.length > 0) {
         const responseforClient = resultFromDB.map((item) => {
           const frequency = item.frequency_count + 'x' + item.displayText;
