@@ -10,7 +10,7 @@ exports.signUp = async (req, res, next) => {
       const userRepository = AppDataSource.getRepository(User);
       const { emailId, firstName, lastName, password } = req.body;
       if (!emailId || !password || !firstName) {
-        res.status(400).send({
+        return res.status(400).send({
           message: 'Parameters are required',
         });
       }
@@ -21,10 +21,10 @@ exports.signUp = async (req, res, next) => {
         },
       });
       if (userExistence) {
-        res.status(400).send({
+        return res.status(400).send({
           message: 'User already Exists',
         });
-        return;
+        
       }
       await userRepository.save({
         firstName,
@@ -33,7 +33,7 @@ exports.signUp = async (req, res, next) => {
         salt,
         email: emailId,
       });
-      res.status(200).send({
+      return res.status(200).send({
         message: 'User onboarded successfully',
       });
     } catch (error) {
@@ -82,7 +82,7 @@ exports.login = async (req, res, next) => {
           exp: Math.floor(Date.now() / 1000) + 60 * 60, //expires in 1 hour
           userId: userExistence?.id,
         },
-        JWTSECRETKEY
+        process.env.JWTSECRETKEY
       );
       res.status(200).send({
         message: 'Valid User',

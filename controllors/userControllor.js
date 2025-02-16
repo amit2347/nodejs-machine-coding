@@ -43,7 +43,7 @@ exports.getScheduleDetails =  async (req, res, next) => {
         .execute();
       
       if (resultFromDB.length > 0) {
-        const responseforClient = res2.map((item) => {
+        const responseforClient = resultFromDB.map((item) => {
           const frequency = item.frequency_count + 'x' + item.displayText;
           let duration = item.duration_value + ' ' + item.timeUnits;
           if(duration === '9999 hours'){
